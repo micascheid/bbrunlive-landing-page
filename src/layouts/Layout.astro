@@ -1,0 +1,26 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Live feed of Bristol Bay's commercial fishing season - run statistics, weather updates, fishery openings, and Port Moller test data." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0D1B1E" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-background text-text-primary antialiased">
+    <slot />
+  </body>
+</html>

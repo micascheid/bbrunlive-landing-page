@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="BB Run Live - Bristol Bay Fishing Season Updates">
+  <div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="py-4 px-6 border-b border-divider">
+      <nav class="max-w-4xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="/icon.png" alt="BB Run Live" class="w-10 h-10 rounded-lg" />
+          <span class="text-xl font-bold text-text-primary">BB Run Live</span>
+        </div>
+        <a 
+          href="/privacy" 
+          class="text-text-secondary hover:text-text-primary transition-colors text-sm"
+        >
+          Privacy Policy
+        </a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center px-6 py-16">
+      <div class="max-w-2xl w-full text-center space-y-12">
+        
+        <!-- Hero Section -->
+        <section class="space-y-6">
+          <div class="flex justify-center">
+            <img 
+              src="/icon.png" 
+              alt="BB Run Live App Icon" 
+              class="w-32 h-32 rounded-3xl shadow-2xl shadow-accent/20"
+            />
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold text-text-primary">
+            BB Run Live
+          </h1>
+          <p class="text-xl text-text-secondary">
+            Your live feed for Bristol Bay's commercial fishing season
+          </p>
+        </section>
+
+        <!-- About Section -->
+        <section class="bg-card rounded-2xl p-8 text-left border border-divider">
+          <h2 class="text-2xl font-semibold text-text-primary mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-info" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            About
+          </h2>
+          <p class="text-text-secondary leading-relaxed">
+            BB Run is a live feed of what's happening with the run in Bristol Bay during the commercial fishing season. It provides current run statistics compared to predictions, weather updates, fishery openings, and Port Moller test data all in one place!
+          </p>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="bg-surface rounded-xl p-5 border border-divider flex flex-col items-center">
+            <svg class="w-8 h-8 text-success mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <p class="text-sm text-text-secondary text-center">Run Statistics</p>
+          </div>
+          <div class="bg-surface rounded-xl p-5 border border-divider flex flex-col items-center">
+            <svg class="w-8 h-8 text-info mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+            <p class="text-sm text-text-secondary text-center">Weather Updates</p>
+          </div>
+          <div class="bg-surface rounded-xl p-5 border border-divider flex flex-col items-center">
+            <svg class="w-8 h-8 text-warning mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p class="text-sm text-text-secondary text-center">Fishery Openings</p>
+          </div>
+          <div class="bg-surface rounded-xl p-5 border border-divider flex flex-col items-center">
+            <svg class="w-8 h-8 text-accent mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <p class="text-sm text-text-secondary text-center">Port Moller Data</p>
+          </div>
+          <div class="bg-surface rounded-xl p-5 border border-divider flex flex-col items-center col-span-2 md:col-span-1">
+            <svg class="w-8 h-8 text-success mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v4m0 0l3-2m-3 2L9 5M4 19h16M6 19l1-6h10l1 6M8 13h8" />
+            </svg>
+            <p class="text-sm text-text-secondary text-center">Boat Counts</p>
+          </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="bg-card rounded-2xl p-8 text-left border border-divider">
+          <h2 class="text-2xl font-semibold text-text-primary mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            Support
+          </h2>
+          <p class="text-text-secondary">
+            For help, questions, or comments please reach: 
+            <a 
+              href="mailto:mica@bearbyteapps.com" 
+              class="text-info hover:text-info/80 transition-colors underline underline-offset-2"
+            >
+              mica@bearbyteapps.com
+            </a>
+          </p>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 px-6 border-t border-divider">
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-text-tertiary">
+        <p>&copy; {new Date().getFullYear()} BB Run Live. All rights reserved.</p>
+        <a 
+          href="/privacy" 
+          class="hover:text-text-secondary transition-colors"
+        >
+          Privacy Policy
+        </a>
+      </div>
+    </footer>
+  </div>
+</Layout>
