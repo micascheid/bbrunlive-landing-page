@@ -10,7 +10,7 @@ const { title, description = "Live feed of Bristol Bay's commercial fishing seas
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +19,47 @@ const { title, description = "Live feed of Bristol Bay's commercial fishing seas
     <meta name="theme-color" content="#0D1B1E" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script is:inline>
+      (function () {
+        var STORAGE_KEY = 'bbrunlive-theme';
+        function applyTheme(theme) {
+          var resolved = theme === 'light' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = resolved;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', resolved === 'light' ? '#F2F0EE' : '#0D1B1E');
+          document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+            var lightIcon = btn.querySelector('[data-theme-icon="light"]');
+            var darkIcon = btn.querySelector('[data-theme-icon="dark"]');
+            var label = btn.querySelector('[data-theme-label]');
+            if (lightIcon) lightIcon.classList.toggle('hidden', resolved !== 'light');
+            if (darkIcon) darkIcon.classList.toggle('hidden', resolved !== 'dark');
+            if (label) label.textContent = resolved === 'light' ? 'Light' : 'Dark';
+          });
+        }
+
+        var saved = 'dark';
+        try {
+          var stored = localStorage.getItem(STORAGE_KEY);
+          if (stored === 'light' || stored === 'dark') saved = stored;
+        } catch (e) {}
+        applyTheme(saved);
+
+        document.addEventListener('DOMContentLoaded', function () {
+          applyTheme(document.documentElement.dataset.theme || saved);
+          document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var current = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+              var next = current === 'dark' ? 'light' : 'dark';
+              try {
+                localStorage.setItem(STORAGE_KEY, next);
+              } catch (e) {}
+              applyTheme(next);
+              window.dispatchEvent(new CustomEvent('bbrunlive-theme-change', { detail: next }));
+            });
+          });
+        });
+      })();
+    </script>
   </head>
   <body class="min-h-screen bg-background text-text-primary antialiased">
     <slot />

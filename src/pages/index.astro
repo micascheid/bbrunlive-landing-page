@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ThemeToggleButton from '../components/ThemeToggleButton.astro';
 ---
 
 <Layout title="BB Run Live - Bristol Bay Fishing Season Updates">
@@ -11,12 +12,15 @@ import Layout from '../layouts/Layout.astro';
           <img src="/icon.png" alt="BB Run Live" class="w-10 h-10 rounded-lg" />
           <span class="text-xl font-bold text-text-primary">BB Run Live</span>
         </div>
-        <a 
-          href="/privacy" 
-          class="text-text-secondary hover:text-text-primary transition-colors text-sm"
-        >
-          Privacy Policy
-        </a>
+        <div class="flex items-center gap-4">
+          <a 
+            href="/privacy" 
+            class="text-text-secondary hover:text-text-primary transition-colors text-sm"
+          >
+            Privacy Policy
+          </a>
+          <ThemeToggleButton />
+        </div>
       </nav>
     </header>
 

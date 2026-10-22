@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ThemeToggleButton from '../components/ThemeToggleButton.astro';
 ---
 
 <Layout title="Privacy Policy - BB Run Live" description="Privacy Policy for BB Run Live mobile application">
@@ -11,12 +12,15 @@ import Layout from '../layouts/Layout.astro';
           <img src="/icon.png" alt="BB Run Live" class="w-10 h-10 rounded-lg" />
           <span class="text-xl font-bold text-text-primary">BB Run Live</span>
         </a>
-        <a 
-          href="/" 
-          class="text-text-secondary hover:text-text-primary transition-colors text-sm"
-        >
-          ← Back to Home
-        </a>
+        <div class="flex items-center gap-4">
+          <a 
+            href="/" 
+            class="text-text-secondary hover:text-text-primary transition-colors text-sm"
+          >
+            ← Back to Home
+          </a>
+          <ThemeToggleButton />
+        </div>
       </nav>
     </header>
 
@@ -24,7 +28,7 @@ import Layout from '../layouts/Layout.astro';
     <main class="flex-1 px-6 py-12">
       <article class="max-w-3xl mx-auto prose-custom">
         <h1 class="text-3xl md:text-4xl font-bold text-text-primary mb-2">Privacy Policy</h1>
-        <p class="text-text-tertiary mb-8">Last Updated: May 19, 2026</p>
+        <p class="text-text-tertiary mb-8">Last Updated: October 15, 2026</p>
         
         <p class="text-text-secondary mb-8 leading-relaxed">
           BB Run Live ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application (the "App").
@@ -62,9 +66,16 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div class="border-t border-divider pt-6">
+              <h3 class="text-lg font-medium text-text-primary mb-3">Push Notifications</h3>
+              <p class="text-text-secondary">
+                If you opt in to receive push notifications, we collect and store a push notification token generated for your device (along with your device platform, iOS or Android) so we can deliver BBRSDA news and important updates to your device. This token is removed when you sign out, turn off notifications in the App, or delete your account.
+              </p>
+            </div>
+
+            <div class="border-t border-divider pt-6">
               <h3 class="text-lg font-medium text-text-primary mb-3">Automatically Collected Information</h3>
               <p class="text-text-secondary">
-                The App does not collect location data, device identifiers, or usage analytics beyond what Apple and Google may collect through their respective app stores and operating systems.
+                Other than the optional push notification token described above, the App does not collect location data, advertising identifiers, or usage analytics beyond what Apple and Google may collect through their respective app stores and operating systems.
               </p>
             </div>
           </div>
@@ -81,6 +92,7 @@ import Layout from '../layouts/Layout.astro';
             <ul class="list-disc list-inside text-text-secondary space-y-2 ml-2">
               <li>Create and manage your account</li>
               <li>Authenticate your access to the App</li>
+              <li>Send BBRSDA news and important update notifications if you have opted in</li>
               <li>Respond to your feedback and bug reports</li>
               <li>Improve the App's functionality and user experience</li>
             </ul>
@@ -115,7 +127,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
             <p class="text-text-secondary mb-3">Your information may be shared only in the following circumstances:</p>
             <ul class="space-y-3 text-text-secondary ml-2">
-              <li><strong class="text-text-primary">Service Providers:</strong> We use Supabase to store and manage user data securely.</li>
+              <li><strong class="text-text-primary">Service Providers:</strong> We use Supabase to store and manage user data securely, and Expo Push Notification Service (along with Apple Push Notification service and Google Firebase Cloud Messaging) to deliver push notifications to opted-in devices.</li>
               <li><strong class="text-text-primary">Authentication Providers:</strong> If you use Google or Apple Sign-In, those services process your authentication according to their respective privacy policies.</li>
               <li><strong class="text-text-primary">Legal Requirements:</strong> We may disclose your information if required by law or in response to valid legal requests.</li>
             </ul>
@@ -139,6 +151,13 @@ import Layout from '../layouts/Layout.astro';
               </ol>
               <p class="text-text-secondary mt-3">
                 Upon deletion, all your personal data will be permanently removed from our systems.
+              </p>
+            </div>
+
+            <div class="border-t border-divider pt-6">
+              <h3 class="text-lg font-medium text-text-primary mb-3">Push Notification Preferences</h3>
+              <p class="text-text-secondary">
+                You can turn push notifications on or off at any time in the App under the "More" tab → "Account" → "Notifications", or in your device's system Settings.
               </p>
             </div>
 

@@ -1,0 +1,8 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { PostEditor } from '../../../components/admin/PostEditor';
+---
+
+<Layout title="New Post - BB Run Live Admin">
+  <PostEditor client:only="react" />
+</Layout>

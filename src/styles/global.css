@@ -15,6 +15,40 @@
   --color-accent: #E8715C;
 }
 
+:root,
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-background: #0D1B1E;
+  --color-card: #152429;
+  --color-surface: #1E3238;
+  --color-divider: #2A3D44;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B8D4D8;
+  --color-text-tertiary: #8A9A9E;
+  --color-success: #14B8A6;
+  --color-warning: #FFB74D;
+  --color-error: #EF5350;
+  --color-info: #4DD0E1;
+  --color-accent: #E8715C;
+}
+
+/* BBRSDA Brand Light Theme (matches mobile app bbrsda light scheme) */
+html[data-theme="light"] {
+  color-scheme: light;
+  --color-background: #F2F0EE;
+  --color-card: #FFFFFF;
+  --color-surface: #E7E4DF;
+  --color-divider: #DDD9D3;
+  --color-text-primary: #0C5159;
+  --color-text-secondary: #44717C;
+  --color-text-tertiary: #6E7673;
+  --color-success: #0D9488;
+  --color-warning: #D97706;
+  --color-error: #D64545;
+  --color-info: #0C5159;
+  --color-accent: #F15B40;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -23,4 +57,5 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   background-color: var(--color-background);
   color: var(--color-text-primary);
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
