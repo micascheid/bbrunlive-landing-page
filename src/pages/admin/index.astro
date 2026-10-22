@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { AdminLogin } from '../../components/admin/AdminLogin';
+---
+
+<Layout title="Admin Login - BB Run Live">
+  <div class="min-h-screen flex items-center justify-center px-4">
+    <AdminLogin client:only="react" />
+  </div>
+</Layout>

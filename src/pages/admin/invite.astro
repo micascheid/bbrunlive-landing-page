@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { AdminAcceptInvite } from '../../components/admin/AdminAcceptInvite';
+---
+
+<Layout title="Accept Admin Invite - BB Run Live">
+  <div class="min-h-screen flex items-center justify-center px-4 py-8">
+    <AdminAcceptInvite client:only="react" />
+  </div>
+</Layout>
